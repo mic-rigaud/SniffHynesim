@@ -1,0 +1,16 @@
+* SniffHynesim
+
+Ceci est un répertoire contenant un projet réalisé en 3A à l'ENSTA Bretagne.
+
+** Définition du projet
+
+Durant ce projet nous voulons monitorer le fonctionnement des applications s’exécutant dans les différentes machines virtuelles, nous pouvons développer des sondes dédiées aux applications dans le simulateur de système d’information Hynesim.
+
+Si les points de monitoring fonctionnent, nous serons amenés à définir de scripts de génération automatique de code pour ces points de monitoring.
+
+** Contenue de ce répertoire
+
+Ce répertoire contient le code latex du rapport du projet.
+
+Langue: Anglais
+Année: 2016
