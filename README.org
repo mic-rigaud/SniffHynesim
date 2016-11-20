@@ -8,9 +8,15 @@ Durant ce projet nous voulons monitorer le fonctionnement des applications s’e
 
 Si les points de monitoring fonctionnent, nous serons amenés à définir de scripts de génération automatique de code pour ces points de monitoring.
 
+** Description de Hynesim
+"hynesim, pour « HYbrid NEtwork SIMulation », est une plateforme distribuée de simulation de systèmes d’information. hynesim est un ensemble logiciel s’appuyant sur des composants reconnus tels que Linux, Qt et libvirt. Grâce à une interface graphique simple d’utilisation (hyneview), mais néanmoins puissante, hynesim permet de simuler des réseaux complexes en seulement quelques clics. De plus les fonctionnalités hybrides de la plateforme offrent la possibilité de relier un réseau virtuel à des équipements réels."
+
+Pour plus d'information vous pouvez consulter leur site web: [[https://www.hynesim.org/][hynesim : hybrid network simulation]]
+
+
 ** Contenue de ce répertoire
 
-Ce répertoire contient le code latex du rapport du projet.
+Ce répertoire contient le code latex du rapport du projet, ainsi que les script qui ont servi à réaliser les sondes.
 
 Langue: Anglais
 Année: 2016
