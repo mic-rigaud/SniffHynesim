@@ -1,10 +1,69 @@
 
 \chapter{IDS}
 
+\section{Presentation}
+
 \definition{IDS}{An intrusion detection system (IDS) inspects all inbound and
   outbound network activity and identifies suspicious patterns that may indicate
   a network or system attack from someone attempting to break into or compromise
   a system. \cite{webopedia}}
+
+
+
+There is many type of IDS:
+\begin{itemize}
+\item NIDS, network IDS. They listen and analyze the network and detect attack
+  from network packet. They are the most interesting for our subject, so this
+  document will focus primarily on this type of IDS.
+\item HIDS, host IDS. These IDS are on a system and they detect intrusion inside
+  it.
+\item Hybrid IDS. They are composed with NIDS and HIDS.
+\item IPS. They are NIDS with active functions which permit to stop attackers.
+\item KIDS/KIPS, kernel IDS. They are type of HIDS. They are on the system
+  kernel. They are more effective and slower than HIDS.
+\end{itemize}
+
+In the following of this document we will talk about NIDS. But to detect attack
+there is also many methods.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO: mettre en avant les but d un ids. ie rapidite et pas de fausse alarm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Detection methods}
+
+\subsection{Misuse detection}
+
+This technique is the simplest. It use attack signature to raise alert. In fact,
+all attacks have a particularity, if we detect this particularity we can detect
+the attackers. There is three sub methods.
+
+\subsubsection{Pattern matching}
+
+In this technique we have a based of signature and the IDS is looking for the
+pattern. If the pattern match perfectly, this IDS raise an alert.
+
+The problem is, only attacks which are in our based can be detected. So if there
+is a new attack (zero day), or if the attack is not perfectly the same, we can't
+detect it.
+
+However, this method is much used because it is high-performance, and with this
+method the IDS don't raise a lot of false alerts
+
+\subsubsection{Dynamic pattern matching}
+
+\subsubsection{Protocol analysis}
+
+
+
+
+
+
+\subsection{Anomaly detection}
+
+
+
+
 
 
 %%% Local Variables:
