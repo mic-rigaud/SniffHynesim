@@ -133,25 +133,23 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 
-The cyber security is one of the major thread of the 21th century, and attackers
-use techniques more and more sophisticated. So one of the most important aim for
-cyber security engineer is to find a way to detect and stop attacks. To do that
-effectively cyber engineer need to analyze cyber attack to find the way to
-detect them. A solution is use simulators of network and information system to
-reproduce as much as they want, without injury, and huge agility scenario of
-cyber attack. To do that, the ENSTA Bretagne has decided as many company like
-Thales or the DGA to use Hynesim\footnote{This software is presented in the
-  chapter \ref{chap:hynesim}}.
+The cyber security is one of the major thread of the 21th century, and attackers use techniques more and more
+sophisticated. So one of the most important aim for cyber security engineer is to find a way to detect and stop
+attacks. To do that effectively cyber engineer need to analyze cyber attack to find the way to detect them. A
+solution is use simulators of network and information system to reproduce as much as they want, without injury, and
+huge agility scenario of cyber attack. To do that, the ENSTA Bretagne has decided as many company like Thales or
+the DGA to use Hynesim\footnote{This software is presented in the chapter \ref{chap:hynesim}}.
 
-The aim of this project is elaborate a solution to alert when a strategy of
-attack is spotted out. To do that, we have to create pattern of attack and use
-an IDS\footnote{Intrusion detection system} to alert us. To verify the solution
-and create pattern as exhaustive as possible, we will use Hynesim.
+The aim of this project is elaborate a solution to alert when a strategy of attack is spotted out. To do that, we
+have to create pattern of attack and use an IDS\footnote{Intrusion detection system} to alert us. To verify the
+solution and create pattern as exhaustive as possible, we will use Hynesim.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% La ca va pas...
-To begin, we will present Hynesim and the advantages of this software. Then, we
-are going to present the aim of an IDS and the most popular IDS. And to finish
-we will present the aim of this project.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To begin, we will present Hynesim and the advantages of this software. Then, we are going to present the aim of an
+IDS and the most popular IDS. And to finish we will present the aim of this project.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -164,14 +162,28 @@ we will present the aim of this project.
 
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
+
+
+After this bibliographic study, to implement our network sniffer which detect strategy of attack we have to improve
+an IDS. In fact, IDS have the ability to detect attack with many methods. Here, we have to use an anomaly detection
+method to find attackers. However, as we see, this method has many disadvantages so we have to improve it.
+
+Moreover, as it was advise by the subject we will use Hynesim. In fact, Hynesim is a very interesting tool to
+virtualize and simulate network. By this way, we could test under many attack our solution to secure network.
+
+After this study, we have only a partial view of how implement this detection method. So one of the most important
+work for the next two weeks will be find the way to detect strategy of attacks. It is a difficult objective but
+also one of the most interesting for the security of our networks.
+
+
 \newpage
 
 %%%% ANNEXE %%%%%%%%%%%%
 
-%\part*{Annexe}
+\part*{Annexe}
 \appendix
 \nocite{*}
-%\input{annexe_}
+\input{Partie/Selks}
 \newpage
  \listoffigures
  \printindex

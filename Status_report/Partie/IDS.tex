@@ -73,10 +73,10 @@ profile the IDS could use machine learning.
 ~\\
 
 \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|} \hline
-Advantages                                                                                                 & Drawbacks \\ \hline the IDS should be able to detect every type of
+Advantages                                                                                                 & Drawbacks \\ \hline The IDS should be able to detect every type of
 attack even unknown (zero days) attacks.                                                                   & This method is not reliable. Every
 alteration of the use create an alert                                                                                  \\
-  \hline the IDS is autonomous                                                                             & This method
+  \hline The IDS is autonomous                                                                             & This method
 need a learning period. In fact, this method need to learn the habit of users,
 so we need a period without attacks                                                                                    \\ \hline & An hackers can need only time. In fact,
 if the attacker arrive to create a new profile after month with his attacks, he
@@ -101,8 +101,12 @@ port 80.
 % network.
 
 
+\section{Main IDS}
 
-
+There is many IDS on the market. The most popular open source solution are Snort, Suricata, Bro, Fail2Ban, ACARM
+... There is also some tools <<all in one>>. It is usually OS\footnote{Operating system} with an IDS, a tool to
+analyze alert, a tool to create rules,... The most popular are SELKS and ELKS. A description of SELKS is available
+page \pageref{chap:selks}.
 
 
 
