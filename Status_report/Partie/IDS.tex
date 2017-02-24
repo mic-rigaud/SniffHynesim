@@ -11,7 +11,7 @@ or compromise a system. \cite{webopedia}}
 
 
 There is many type of IDS:
-\begin{itemize}
+\begin{itemize}[itemsep=0pt]
 \item NIDS, network IDS. They listen and analyze the network and detect attack from network packet. They are the
   most interesting for our subject, so this document will focus primarily on this type of IDS.
 \item HIDS, host IDS. These IDS are on a system and they detect intrusion inside it.
@@ -22,10 +22,21 @@ slower than HIDS.
 \end{itemize}
 
 In the following of this document we will talk about NIDS. But to detect attack there is also many methods.
+~\\
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TODO: mettre en avant les but d un ids. ie rapidite et pas de fausse alarm
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To be efficient and IDS should have a good balance between some features.
+\begin{itemize}[itemsep=0pt]
+\item \textbf{Speed:} In fact an IDS should analyze packet as fast as possible, otherwise, it will behind the network
+  traffic.
+\item \textbf{False alarm:} An IDS raise an alert when it detect attack. But it could raise alarm during a normal
+  utilization. It is name false alarm. It is one of the most important feature, because at every alarm a system
+  administrator need to analyze the alert. So in company, every alarm cost time and money.
+\item \textbf{Probability of detection:} It is for an IDS the capacity of detecting attack. More this probability is high
+  more the IDS will raise false alarm. In some sensitive system, we prefer detect every attack and raise many
+  false alarm. That depends on the system.
+\end{itemize}
+
 
 \section{Detection methods}
 
@@ -59,7 +70,7 @@ protocol. The IDS will check if flows are compliant with RFC\footnote{Requests f
 packets and fields of them. An IDS can check many protocol as FTP, HTTP, ICMP, \dots
 
 The advantages of this methods is that we can detect unknown attacks in contrary of pattern matching. However,
-software publishers don't often respect RFC so we this technique is not always very effective.
+software publishers don't often respect RFC so this technique is not always very efficient.
 
 
 
