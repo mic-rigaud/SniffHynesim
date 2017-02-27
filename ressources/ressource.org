@@ -7,3 +7,10 @@
 ** Suricata
 
 https://home.regit.org/?s=suricata&searchsubmit
+
+[[https://www.prelude-siem.org/][Overview - PRELUDE SIEM]]
+[[http://www.prelude-siem.com/produit/introduction/][Introduction – Prelude SIEM]]
+[[https://en.wikipedia.org/wiki/Prelude_SIEM_(Intrusion_Detection_System)][Prelude SIEM (Intrusion Detection System) - Wikipedia]]
+[[https://en.wikipedia.org/wiki/Security_information_and_event_management][Security information and event management - Wikipedia]]
+[[https://www.developpez.net/forums/d507942/systemes/linux/securite/mise-place-d-ids/][Mise en Place d'un IDS]]
+[[https://doc.ubuntu-fr.org/prelude][prelude - Documentation Ubuntu Francophone]]

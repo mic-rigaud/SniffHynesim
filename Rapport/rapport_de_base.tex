@@ -5,7 +5,7 @@
 \usepackage{palatino}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
+\usepackage[english]{babel}
 
 
 %%%%%%%%%%%%%%%%%%%%  PACKAGE SECONDAIRE
@@ -18,7 +18,7 @@
 %\usepackage{wrapfig}			% permet d avoir des image avec texte coulant a cote
 %\usepackage{fancyhdr}			% permet d inserer des choses en haut et en bas de chaque page
 \usepackage{microtype}			% permet d ameliorer l apparence du texte
-\usepackage[explicit]{titlesec}	% permet de modifier les titres
+%\usepackage[explicit]{titlesec}	% permet de modifier les titres
 \usepackage{graphicx}			% permet d utiliser les graphiques
 \graphicspath{{./images/}}		% to say where are image
 %\usepackage{eso-pic} 			% to put figure in the background
@@ -33,15 +33,15 @@
 %\usepackage{fancybox}			% permet de realiser les cadres
 \usepackage{titletoc}			% permet de modifier les titres
 %\usepackage{caption}
-%\usepackage[a4paper, top=2cm, bottom=2cm]{geometry}
+\usepackage[a4paper, top=2cm, bottom=2cm]{geometry}
 \usepackage{frbib}                      %permet d avoir une biblio francaise
 \usepackage[babel=true]{csquotes}
-
+\usepackage{enumitem}
 
 \usepackage{graphicx}
 \RequirePackage{pageGardeEnsta}	% permet d avoir la page de garde ensta
 
-%\setcounter{secnumdepth}{2}		% permet d'augmenter la numerotation
+\setcounter{secnumdepth}{2}		% permet d'augmenter la numerotation
 %\setcounter{tocdepth}{2}		% permet d'augmenter la numerotation
 
 %%%%%%%%%%%%%%%%%%  DEFINITION DES BOITES
@@ -56,7 +56,14 @@
 \parbox{\textwidth}{\textbf{\textcolor{FireBrick}{Théorème~\thechapter.\theth~:}}{\hfill \textit{#1}}\\#2}}}
 
 \newcommand{\attention}[1]{\noindent\fcolorbox{white}{white}{\parbox{\textwidth}{\textcolor{FireBrick}{
-\textbf{Attention !}}\\\textit{#1}\\}}}
+        \textbf{Attention !}}\\\textit{#1}\\}}}
+
+
+\newcommand{\definition}[2]{\noindent\fcolorbox{OliveDrab}{white}{\stepcounter{th}
+    \parbox{\textwidth}{\textbf{\textcolor{OliveDrab}{Définition~\thechapter.\theth~:}}{~
+        \textit{#1}}~\setlength{\parindent}{15pt}\par#2\par}}\par~\\}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -100,10 +107,10 @@
 
 
 %%%%% Report Title %%%%%
-\title{Arbre Lexicographique}
+\title{Sniff Hynesim}
 \author{\textsc{Rigaud Michaël}}
 \date{\today}
-\doctype{Rapport de stage}
+\doctype{Status Report}
 \promo{promo 2017}
 \etablissement{\textsc{Ensta} Bretagne\\2, rue François Verny\\
   29806 \textsc{Brest} cedex\\\textsc{France}\\Tel +33 (0)2 98 34 88 00\\ \url{www.ensta-bretagne.fr}}
@@ -123,31 +130,92 @@
 
 %%%%%%%%%%%%%%%%% INTRODUCTION
 
-%\chapter*{Introduction}
-%\addcontentsline{toc}{chapter}{Introduction}
-\newpage	  
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+The cyber security is one of the major thread of the 21th century, and attackers use techniques more and more
+sophisticated. So one of the most important aim for cyber security engineer is to find a way to detect and stop
+attacks. To do that effectively cyber engineer need to analyze cyber attack to find a way to detect them. A
+solution is use simulators of network and information system to reproduce as much as they want, without injury, and
+huge agility scenario of cyber attack. To do that, the ENSTA Bretagne has decided as many company like Thales or
+the DGA to use Hynesim\footnote{This software is presented in the chapter \ref{chap:hynesim}}.
+
+The aim of this project is elaborate a solution to alert when a strategy of attack is spotted out. To do that, we
+have to create pattern of attack and use an IDS\footnote{Intrusion detection system} to alert us. To verify the
+solution and create pattern as exhaustive as possible, we will use Hynesim.
+
+To begin, we will present Hynesim and the advantages of this software. Then, we are going to present the aim of an
+IDS and the most popular IDS. And to finish we will present the aim of this project and the organization of the
+project.
+
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-%\input{Partie1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Construction du rapport:
+%
+% Partie 1 : Etude Biblio et organisation (cf status report)
+% Partie 2 : Etude Technique
+% | Chapitre 2.1 : Installation de Hynesim et son utilisation
+% | Chapitre 2.2 : Installation de Selks et son utilisation
+% - Chapitre 2.3 : Attaques menés et résultats
+% Partie 3 : Amélioration
+% | Chapitre 3.1 : Implémentions par apprentissages
+% - Chapitre 3.2 : Attaques et résultats
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\part{Status report}
+  \input{Partie/Hynesim}
+  \input{Partie/IDS}
+  \input{Partie/Project}
+
+\part{Technical study}
+\input{Partie/Install_hynesim}
+  \input{Partie/Selks}
+  \input{Partie/Attacks}
+
+\part{Improvement}
+
 
 
 %%%% CONCLUSION %%%%%%%%%
 
-%\chapter*{Conclusion}
-%\addcontentsline{toc}{chapter}{Conclusion}
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+
+After this bibliographic study, to implement our network sniffer which detect strategy of attack we have to improve
+an IDS. In fact, IDS have the ability to detect attack with many methods. Here, we have to use an anomaly detection
+method to find attackers. However, as we see, this method has many disadvantages so we have to improve it.
+
+Moreover, as it was advise by the subject we will use Hynesim. In fact, Hynesim is a very interesting tool to
+virtualize and simulate network. By this way, we could test under many attacks our solution to secure network.
+
+After this study, we have only a partial view of how implement this detection method. So one of the most important
+work for the next two weeks will be find the way to detect strategy of attacks. It is a difficult objective but
+also one of the most interesting for the security of our networks.
+
+
 \newpage
 
 %%%% ANNEXE %%%%%%%%%%%%
 
-%\part*{Annexe}
+\part*{Annexe}
 \appendix
 \nocite{*}
-%\input{annexe_}
+%\input{Partie/Selks}
 \newpage
  \listoffigures
  \printindex
- \bibliographystyle{frplain}
+ \bibliographystyle{plain}
   \bibliography{biblio}
 
 \end{document}
 %%%%%%%%%%%%%%%%% FIN DU DOCUMENT
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

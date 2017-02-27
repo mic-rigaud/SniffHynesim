@@ -1,0 +1,128 @@
+\chapter{IDS}
+
+In this subject, we will have to create probe to detect attack. It is the aim of IDS that we are going to introduce.
+
+\section{Presentation}
+
+\definition{IDS}{An intrusion detection system (IDS) inspects all inbound and outbound network activity and
+identifies suspicious patterns that may indicate a network or system attack from someone attempting to break into
+or compromise a system. \cite{webopedia}}
+
+
+
+There is many type of IDS:
+\begin{itemize}[itemsep=0pt]
+\item NIDS, network IDS. They listen and analyze the network and detect attack from network packet. They are the
+  most interesting for our subject, so this document will focus primarily on this type of IDS.
+\item HIDS, host IDS. These IDS are on a system and they detect intrusion inside it.
+\item Hybrid IDS. They are composed with NIDS and HIDS.
+\item IPS. They are NIDS with active functions which permit to stop attackers.
+\item KIDS/KIPS, kernel IDS. They are type of HIDS. They are on the system kernel. They are more effective and
+slower than HIDS.
+\end{itemize}
+
+In the following of this document we will talk about NIDS. But to detect attack there is also many methods.
+~\\
+
+
+To be efficient and IDS should have a good balance between some features.
+\begin{itemize}[itemsep=0pt]
+\item \textbf{Speed:} In fact an IDS should analyze packet as fast as possible, otherwise, it will behind the network
+  traffic.
+\item \textbf{False alarm:} An IDS raise an alert when it detect attack. But it could raise alarm during a normal
+  utilization. It is name false alarm. It is one of the most important feature, because at every alarm a system
+  administrator need to analyze the alert. So in company, every alarm cost time and money.
+\item \textbf{Probability of detection:} It is for an IDS the capacity of detecting attack. More this probability is high
+  more the IDS will raise false alarm. In some sensitive system, we prefer detect every attack and raise many
+  false alarm. That depends on the system.
+\end{itemize}
+
+
+\section{Detection methods}
+
+\subsection{Misuse detection}
+
+This technique is the simplest. It use attack signature to raise alert. In fact, all attacks have a particularity,
+if we detect this particularity we can detect the attackers. There is three sub methods.
+
+\subsubsection{Pattern matching}
+
+In this technique we have a based of signature and the IDS is looking for the pattern. If the pattern match
+perfectly, this IDS raise an alert.
+
+The problem is, only attacks which are in our based can be detected. So if there is a new attack (zero day), or if
+the attack is not perfectly the same, we can't detect it.
+
+However, this method is much used because it is high-performance, and with this method the IDS don't raise a lot of
+false alerts
+
+\subsubsection{Dynamic pattern matching}
+
+In this techniques the IDS is also based on signature but this data base is dynamic. In other words, the IDS has
+the faculty of adaptation and learning. The IDS improve his data base of signature automatically.
+
+\subsubsection{Protocol analysis}
+
+The last sub method we will present is the protocol analysis. This technique is based on the verification of
+protocol. The IDS will check if flows are compliant with RFC\footnote{Requests for Comments, is a type of
+  publication from the Internet Engineering Task Force (IETF) and the Internet Society (ISOC), the principal
+  technical development and standards-setting bodies for the Internet.} standards. It will verify parameters of
+packets and fields of them. An IDS can check many protocol as FTP, HTTP, ICMP, \dots
+
+The advantages of this methods is that we can detect unknown attacks in contrary of pattern matching. However,
+software publishers don't often respect RFC so this technique is not always very efficient.
+
+
+
+
+
+\subsection{Anomaly detection}
+
+This technique consists in detecting an intrusion with the analysis of the user's past behavior. So the IDS should
+create a profile of users from his use and raise alert when there is an event outside this profile. To create
+profile the IDS could use machine learning.
+~\\
+
+\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|} \hline
+Advantages                                                                                                 & Drawbacks \\ \hline The IDS should be able to detect every type of
+attack even unknown (zero days) attacks.                                                                   & This method is not reliable. Every
+alteration of the use create an alert                                                                                  \\
+  \hline The IDS is autonomous                                                                             & This method
+need a learning period. In fact, this method need to learn the habit of users,
+so we need a period without attacks                                                                                    \\ \hline & An hackers can need only time. In fact,
+if the attacker arrive to create a new profile after month with his attacks, he
+could attack silently                                                                                                  \\ \hline
+
+\end{tabular}
+
+
+\subsubsection{Probabilistic method}
+Bayésien network is a learning machine based on probability. The IDS will create a probabilistic model and if the
+user and will raise an alert if the user don't respect this model.
+
+For example, we know that in 90\% of cases in an HTTP request the first parameter is GET after a connection to the
+port 80.
+
+
+%
+% \subsubsection{Statistic method}
+% \subsubsection{Other method}
+
+% It is possible to use every type of machine learning. In particularly, neural
+% network.
+
+
+\section{Main IDS}
+
+There is many IDS on the market. The most popular open source solution are Snort, Suricata, Bro, Fail2Ban, ACARM
+... There is also some tools <<all in one>>. It is usually OS\footnote{Operating system} with an IDS, a tool to
+analyze alert, a tool to create rules,... The most popular are SELKS and ELKS. A description of SELKS is available
+page \pageref{chap:selks}.
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../rapport_de_base"
+%%% End:
