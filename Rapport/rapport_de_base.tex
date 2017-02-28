@@ -156,13 +156,15 @@ project.
 % Construction du rapport:
 %
 % Partie 1 : Etude Biblio et organisation (cf status report)
-% Partie 2 : Etude Technique
+% Ajout d'un chapitre sur les SIEM
+% Partie 2 : Installation
 % | Chapitre 2.1 : Installation de Hynesim et son utilisation
 % | Chapitre 2.2 : Installation de Selks et son utilisation
-% - Chapitre 2.3 : Attaques menés et résultats
-% Partie 3 : Amélioration
-% | Chapitre 3.1 : Implémentions par apprentissages
-% - Chapitre 3.2 : Attaques et résultats
+% | Chapitre 2.3 : Installation de Prelude et son utilisation
+% Partie 3 : Expérience
+% | Chapitre 3.1 : Attaques menés
+% | Chapitre 3.2 : Résultats
+% - Chapitre 3.3 : amélioration
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -170,15 +172,16 @@ project.
 \part{Status report}
   \input{Partie/Hynesim}
   \input{Partie/IDS}
+  \input{Partie/SIEM}
   \input{Partie/Project}
 
 \part{Technical study}
-\input{Partie/Install_hynesim}
+  \input{Partie/Install_hynesim}
   \input{Partie/Selks}
-  \input{Partie/Attacks}
+  \input{Partie/Prelude}
 
 \part{Improvement}
-
+  \input{Partie/Attacks}
 
 
 %%%% CONCLUSION %%%%%%%%%
