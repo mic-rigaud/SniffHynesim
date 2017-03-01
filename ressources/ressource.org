@@ -14,3 +14,5 @@ https://home.regit.org/?s=suricata&searchsubmit
 [[https://en.wikipedia.org/wiki/Security_information_and_event_management][Security information and event management - Wikipedia]]
 [[https://www.developpez.net/forums/d507942/systemes/linux/securite/mise-place-d-ids/][Mise en Place d'un IDS]]
 [[https://doc.ubuntu-fr.org/prelude][prelude - Documentation Ubuntu Francophone]]
+
+[[https://www.elastic.co/guide/en/logstash/current/config-examples.html][Logstash Configuration Examples | Logstash Reference 5.2 | Elastic]]

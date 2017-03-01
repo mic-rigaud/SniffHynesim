@@ -1,0 +1,116 @@
+* TUTO pour installer Selks+Prelude
+
+** Install SLEKS
+
+   Installer l'ISO fourni sur le site officiel: [[https://www.stamus-networks.com/open-source/][Open Source | Stamus Networks]]
+
+   Puis une foi connecte faire:
+
+   #+BEGIN_SRC bash
+   apt-get update; apt-get upgrade -y
+   #+END_SRC
+
+   Les mots de passes sont de base: root/StamusNetworks
+   Et pour l interface graphique: selks-user/selks-user
+
+** Install Prelude
+
+   D'abord il faut installer mysql
+
+   #+BEGIN_SRC bash
+   apt-get install mysql-server
+   #+END_SRC
+
+   Ensuite les paquet prelude nécessaire
+
+   #+BEGIN_SRC bash
+   apt-get install prelude-manager prelude-lml prewikka libprelude-dev prelude-correlator
+   #+END_SRC
+
+   Enfin, changer le fichier prewikka.conf
+
+
+   #+BEGIN_SRC bash
+   nano /etc/prewikka/prewikka.conf
+   #+END_SRC
+
+   #+BEGIN_SRC nano
+   [interface]
+   #This is the name at the top right and left of the Prewikka interface
+   #You can change it or leave as is
+   software: Prewikka
+   place: company ltd.
+   browser_title: Prelude management
+
+   #The following are the setting for your prelude database
+   [idmef_database]
+   type: mysql
+   host: localhost
+   user: prelude # mettre l utilisateur qui a creer la bdd
+   pass: prelude # mettre le mdp
+   name: prelude
+
+   #This is the database information for the prewikka DB you created above
+   [database]
+   type: mysql
+   host: localhost
+   user: prewikka # mettre l utilisateur qui a creer la bdd
+   pass: prewikka # mettre le mdp
+   name: prewikka
+
+   #You can comment this out to stop logs from writing to stderr
+   [log stderr]
+   #+END_SRC
+
+   Maintenant vous pouvez vous connecter a l interface de prelude. Il faut taper dans un terminal:
+
+   #+BEGIN_SRC bash
+   prewikka-httpd
+   #+END_SRC
+
+   Ensuite dans un navigateur: localhost:8000
+   Pour se connecter: admin/admin
+
+
+** Interconnecter les deux interfaces
+*** Rendre Suricata compatiple avec Prelude
+   Tout d'abord, il faut ajouter changer des parametres dans le fichier suricata.yaml
+
+   #+BEGIN_SRC bash
+   cp /etc/suricata/suricata.yaml /etc/suricata/suricata.yaml.orign
+   nano /etc/suricata/suricata.yaml
+   #+END_SRC
+
+   Changer ces lignes:
+
+   #+BEGIN_SRC nano
+  # alert output to prelude (http://www.prelude-technologies.com/) only
+  # available if Suricata has been compiled with --enable-prelude
+  - alert-prelude:
+      enabled: yes
+      profile: suricata
+      log-packet-content: yes
+      log-packet-header: yes
+   #+END_SRC
+
+
+   Ensuite, il faut réinstaller Suricata avec l acceptation de prelude
+   Suivre les démarches énonces ici: [[https://github.com/StamusNetworks/SELKS/wiki/How-to-compile-latest-Suricata-on-SELKS][How to compile latest Suricata on SELKS · StamusNetworks/SELKS Wiki · GitHub]]
+   Ne pas oublier d'ajouter --enable-prelude lors du ./configure
+
+*** Connecter Prelude et Suricata
+
+Sur la machine ou il y a prelude, en remplacant "manager adress" et X convenablement:
+
+#+BEGIN_SRC bash
+prelude-admin register suricata "idmef:w" <manager address> --uid X --gid X
+#+END_SRC
+
+Sur la machine ou il y suricata:
+
+
+#+BEGIN_SRC bash
+prelude-admin registration-server prelude-manager
+#+END_SRC
+
+Puis suivre les instructions a l ecran
