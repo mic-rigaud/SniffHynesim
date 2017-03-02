@@ -1,0 +1,22 @@
+* Installation et configuration
+
+** Logstash
+
+Pour lancer une nouvelle instance a partir d un autre fichier de conf:
+
+
+#+BEGIN_SRC bash
+/opt/logstash/bin/logstash -f fichier.conf
+#+END_SRC
+
+Pour creer un fichier de conf qui marche bien aller voir: [[https://www.elastic.co/guide/en/logstash/current/config-examples.html][Logstash Configuration Examples | Logstash Reference 5.2 | Elastic]]
+
+** Elastic Search
+
+Pour réaliser des requêtes depuis l'interface web, il faut faire:
+
+- localhost/elasticsearch/_search?q=<la recherche>&pretty=true
+
+** Kibana
+
+Se référer à l'article suivant pour créer des graphe et filtre sous kibana: [[https://www.digitalocean.com/community/tutorials/how-to-use-kibana-dashboards-and-visualizations][How To Use Kibana Dashboards and Visualizations | DigitalOcean]]
