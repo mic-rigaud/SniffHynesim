@@ -1,0 +1,8 @@
+* Installer des règles dans Suricata
+Si l on veut rajouter une règles, il faut d abord écrire les règles dans un fichier en local.
+
+Ensuite, on crée une source dans scirius qui va chercher les règles dans le fichier local.
+
+Puis, si le vérificateur de règles annonce que les règles sont correct. On "enable" la catégorie qui contient la source.
+
+Une foi que tout est activé, il faut faire: Suricata -> ruleset -> push
