@@ -1,0 +1,4 @@
+alert tcp any any -> any 9124 (msg:"Action goping"; content:"goping"; sid:501; rev:5000;)
+alert tcp any any -> any 9124 (msg:"Action gopong"; content:"gopong"; sid:502; rev:5001;)
+alert tcp any any -> any 9124 (msg:"Connexion vers l appli python"; flow:established,to_server sid:503; rev:5002;)
+alert tcp any any -> any 9000 (msg:"Connexion vers l interface admin"; flow:established,to_server sid:504; rev:5002;)
