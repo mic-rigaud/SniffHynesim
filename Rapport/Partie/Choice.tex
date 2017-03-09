@@ -1,7 +1,6 @@
 
 \chapter{Technical choice}
-
-
+\label{chap:choice}
 
 \section{Application created for test}
 
@@ -31,12 +30,53 @@ The figure \ref{fig:appli} represent a model of our application.
 
 \section{IDS}
 
-Choice of SELKS
+To monitor the network between my applications, I have to install an IDS. In this project, my IDS only need to check
+network packets and send alert when it detects some pattern. So I choose to use a IDS which use a misuse detection.
+
+Moreover, my IDS only need to raise alert and save them. It is possible to find on the market of open source
+software many IDS which do that. So I choose one of the most popular open source IDS, SELKS.
 
 \section{SIEM}
 
-Implement my SIEM
+Then, for the SIEM I had to made a choice: use an open source solution of SIEM, or implement my own solution. The
+table \ref{tab:preludevssiem} lists advantages and drawback of the two solutions.
 
+\begin{table}[h]
+  \centering
+  \begin{tabularx}{1.0\linewidth}[h]{|X|X|}
+    \hline
+    \multicolumn{2}{|>{\centering\hsize=2\hsize}X|}{\textbf{Prelude}}\\
+    \hline
+    Advantages & Drawbacks \\
+    \hline
+    Already implemented & Need to connect it to SELKS \\
+    \hline
+    More modular  & Not adapted to my problem \\
+    \hline
+               & Need to configure it \\
+    \hline
+               & Heavy solution \\
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \hline
+    \hline
+    \multicolumn{2}{|>{\centering\hsize=2\hsize}X|}{\textbf{My SIEM}}\\
+    \hline
+    Advantages & Drawbacks \\
+    \hline
+    Well adapted for my problem & Need time to implement it \\
+    \hline
+    Less heavy & Only adapted for my problem\\
+
+    \hline
+
+  \end{tabularx}
+  \caption{Prelude vs my SIEM}
+  \label{tab:preludevssiem}
+\end{table}
+
+For all the reasons cited on the previous table, I choose to implement my own SIEM.
 
 
 %%% Local Variables:

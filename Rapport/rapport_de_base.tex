@@ -24,7 +24,7 @@
 %\usepackage{eso-pic} 			% to put figure in the background
 \usepackage[svgnames]{xcolor}	% permet d avoir plus de 300 couleur predefini
 %\usepackage{array}				% permet d ajouter des option dans les tableaux
-%\usepackage{listings}			% permet d ajouter des ligne de code
+\usepackage{listings}			% permet d ajouter des ligne de code
 %\usepackage{tikz}				% to draw figure
 %\usepackage{appendix}			% permet de faire les index
 %\usepackage{makeidx}			% permet de creer les index
@@ -65,6 +65,17 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\lstdefinelanguage{suricata}
+{morekeywords= {alert, tcp, http, tls, ip, ipv4, ipv4, drop, pass, sid, priority, rev, classtype, threshold, metadata, reference, tag, msg, content, uricontent, pcre, ack, seq, depth, distance, within, offset, replace, nocase, fast\_pattern, rawbytes, byte\_test, byte\_jump, sameip, ip\_proto, flow, window, ftpbounce, isdataat, id, rpc, dsize, flowvar, flowint, pktvar, noalert, flowbits, stream\_size, ttl, itype, icode, tos, icmp\_id, icmp\_seq, detection\_filter, ipopts, flags, fragbits, fragoffset, gid, nfq\_set\_mark, tls.version, tls.subject, tls.issuerdn, tls.fingerprint, tls.store, http\_cookie, http\_method, urilen, http\_client\_body, http\_server\_body, http\_header, http\_raw\_header, http\_uri, http\_raw\_uri, http\_stat\_msg, http\_stat\_code, http\_user\_agent, ssh.protoversion, ssh.softwareversion, ssl\_version, ssl\_state, byte\_extract, file\_data, dce\_iface, dce\_opnum, dce\_stub\_data, asn1, filename, fileext, filestore, filemagic, filemd5, filesize, l3\_proto, luajit},
+otherkeywords={ipv4-csum, tcpv4-csum, tcpv6-csum, udpv4-csum, udpv6-csum, icmpv4-csum, icmpv6-csum, decode-event, app-layer-event, engine-event, stream-event},
+sensitive=true,
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/},
+morestring=\color{blue}[b]",
+keywordstyle=\bfseries\color{red!70!black},
+}
 
 
 %% INDEX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,7 +219,7 @@ also one of the most interesting for the security of our networks.
 
 %%%% ANNEXE %%%%%%%%%%%%
 
-\part*{Annexe}
+\part*{Annex}
 \appendix
 \nocite{*}
 \input{Partie/Selks}
