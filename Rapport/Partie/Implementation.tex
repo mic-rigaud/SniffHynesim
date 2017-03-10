@@ -1,7 +1,7 @@
 
 \chapter{Implementation}
 
-In this chapter, I will explain how I implemented my solutions.
+In this chapter, I will explain how I implemented my solution.
 
 \section{Application}
 
@@ -14,8 +14,8 @@ obvious for this application, the sensitive state is the admin state. So I have 
 try to access to the admin interface. In this way I could know if somebody try without success to access to the
 admin interface, this person is doubtless an attacker.
 
-To raise event, I send message to a particular Logstask instance which is on SELKS. This message contain the time
-and the state of the application. I will explain after, how the Logstash instance work.
+To raise event, I send messages to a particular Logstask instance which is on SELKS. These messages contain the
+time and the state of the application. I will explain after, how the Logstash instance work.
 
 \begin{table}[h]
   \centering
@@ -67,7 +67,7 @@ I added the next rules:
 
 \subsection{Application probe}
 
-As it was explain before, to have the status of the application, it sends to Logstash its status. Then Logstash
+As it was explain before, to have the status of the application, it sends to Logstash its status. Then, Logstash
 filter these messages and write them on the Elasticsearch data base.
 
 On the SELKS computer, there is a Logstash implemented with a filter adapted for Suricata but not for our
@@ -75,7 +75,7 @@ application. So I write a filter to Logstash adapted for this application, and I
 with this configuration on SELKS. By this way, both instance of Logstash do their job without interaction.
 
 The filter implemented, convert plain text message send by my application as json event readable by Elasticsearch.
-Moreover, the filter add some tag on this event facilitate the research on the data base. These tags are added on the
+Moreover, the filter add some tag on this events facilitate the research on the data base. These tags are added on the
 label <<alert\_signature\_id>>.
 
 \begin{figure}[h]

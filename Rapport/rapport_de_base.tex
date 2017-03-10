@@ -38,7 +38,7 @@
 \usepackage[babel=true]{csquotes}
 \usepackage{enumitem}
 
-\usepackage{graphicx}
+
 \RequirePackage{pageGardeEnsta}	% permet d avoir la page de garde ensta
 
 \setcounter{secnumdepth}{2}		% permet d'augmenter la numerotation
@@ -121,7 +121,7 @@ keywordstyle=\bfseries\color{red!70!black},
 \title{Sniff Hynesim}
 \author{\textsc{Rigaud Michaël}}
 \date{\today}
-\doctype{Status Report}
+\doctype{Report}
 \promo{promo 2017}
 \etablissement{\textsc{Ensta} Bretagne\\2, rue François Verny\\
   29806 \textsc{Brest} cedex\\\textsc{France}\\Tel +33 (0)2 98 34 88 00\\ \url{www.ensta-bretagne.fr}}
@@ -139,6 +139,16 @@ keywordstyle=\bfseries\color{red!70!black},
 \tableofcontents
 
 
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+
+This project consist in elaborate the cyber defense of a system virtualize on Hynesim. I had to detect all attacks
+against my system. During this project, Justin Bouroux achieve attacks. The project try to know the state of the
+system and analyze it with model to know if there is an attack.
+
+
 %%%%%%%%%%%%%%%%% INTRODUCTION
 
 \chapter*{Introduction}
@@ -154,8 +164,9 @@ the DGA (French Procurement Agency) to use Hynesim\footnote{This software is pre
 
 The aim of this project is to elaborate a system of alert on Hynesim. This system need to analyze network events
 and applications events. To do that, I have to install an IDS\footnote{Intrusion detection system} to analyze
-network traffic and implement an SIEM\footnote{Security information and event management} to raise alert. A better
-description of the project is available part \ref{part:2}.
+network traffic and implement an SIEM\footnote{Security information and event management} to aggregate alerts.
+Then, with all these events the SIEM may establish the state of the system. If we consider that we are able to know
+all possible states of systems via model checking, the SIEM may know if the system is on a attacked state.
 
 To begin, I will achieve a bibliographic study which will present Hynesim, IDS and SIEM. Then, I am going to
 present the subject, the choices made to answer the topic, and the organization set up in this project. And to
