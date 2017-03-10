@@ -144,40 +144,26 @@ keywordstyle=\bfseries\color{red!70!black},
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 
-The cyber security is one of the major thread of the 21th century, and attackers use techniques more and more
-sophisticated. So one of the most important aim for cyber security engineer is to find a way to detect and stop
-attacks. To do that effectively cyber engineer need to analyze cyber attack to find a way to detect them. A
-solution is use simulators of network and information system to reproduce as much as they want, without injury, and
-huge agility scenario of cyber attack. To do that, the ENSTA Bretagne has decided as many company like Thales or
-the DGA to use Hynesim\footnote{This software is presented in the chapter \ref{chap:hynesim}}.
+Cyber security is one of the major threats of the 21st century, and attackers use increasingly sophisticated
+techniques. So one of the most important aims for cyber security engineers is to find a way to detect and stop
+attacks. To do that effectively cyber engineers need to analyze cyber attacks to find a way to detect them. One
+solution is to use simulators of network and information systems to reproduce scenario of attacks. Simulators
+permit to achieve attacks in a closed space with a huge agility. To do so, ENSTA Bretagne has decided as Thales and
+the DGA (French Procurement Agency) to use Hynesim\footnote{This software is presented in the chapter
+  \ref{chap:hynesim}}.
 
-The aim of this project is elaborate a solution to alert when a strategy of attack is spotted out. To do that, we
-have to create pattern of attack and use an IDS\footnote{Intrusion detection system} to alert us. To verify the
-solution and create pattern as exhaustive as possible, we will use Hynesim.
+The aim of this project is to elaborate a system of alert on Hynesim. This system need to analyze network events
+and applications events. To do that, I have to install an IDS\footnote{Intrusion detection system} to analyze
+network traffic and implement an SIEM\footnote{Security information and event management} to raise alert. A better
+description of the project is available part \ref{part:2}.
 
-To begin, we will present Hynesim and the advantages of this software. Then, we are going to present the aim of an
-IDS and the most popular IDS. And to finish we will present the aim of this project and the organization of the
-project.
+To begin, I will achieve a bibliographic study which will present Hynesim, IDS and SIEM. Then, I am going to
+present the subject, the choices made to answer the topic, and the organization set up in this project. And to
+finish, I will explain how I installed the tools available to me, how I achieved the other tools that I needed, and
+the results of the project.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Construction du rapport:
-%
-% Partie 1 : Etude Biblio et organisation (cf status report)
-% Ajout d'un chapitre sur les SIEM
-% Partie 2 : Installation
-% | Chapitre 2.1 : Installation de Hynesim et son utilisation
-% | Chapitre 2.2 : Installation de Selks et son utilisation
-% | Chapitre 2.3 : Installation de Prelude et son utilisation
-% Partie 3 : Expérience
-% | Chapitre 3.1 : Attaques menés
-% | Chapitre 3.2 : Résultats
-% - Chapitre 3.3 : amélioration
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \part{Bibliographic study}
@@ -185,7 +171,8 @@ project.
   \input{Partie/IDS}
   \input{Partie/SIEM}
 
-\part{Presentation of the subject}
+  \part{Presentation of the topic}
+  \label{part:2}
   \input{Partie/Subject}
   \input{Partie/Choice}
   \input{Partie/Project}
@@ -203,16 +190,21 @@ project.
 \addcontentsline{toc}{chapter}{Conclusion}
 
 
-After this bibliographic study, to implement our network sniffer which detect strategy of attack we have to improve
-an IDS. In fact, IDS have the ability to detect attack with many methods. Here, we have to use an anomaly detection
-method to find attackers. However, as we see, this method has many disadvantages so we have to improve it.
+After this study, I got to implement a system of detection. But because of the lack of time, I achieved a simple
+system, which is based on SELKS and on a SIEM implemented by me. This system is adapted to the application used for
+the tests but it needs some improvements to be adapted for other applications.
 
-Moreover, as it was advise by the subject we will use Hynesim. In fact, Hynesim is a very interesting tool to
-virtualize and simulate network. By this way, we could test under many attacks our solution to secure network.
+We can also notice that my system of detection can also be attacked which has not been envisaged in this study.
 
-After this study, we have only a partial view of how implement this detection method. So one of the most important
-work for the next two weeks will be find the way to detect strategy of attacks. It is a difficult objective but
-also one of the most interesting for the security of our networks.
+To conclude, I achieve a simple system of detection which need some improvements. However, this system prove that
+it is possible to retrieve all the states of an observed system. And if we could model this observed system, we
+would be able to extract all the possible states of the system via model checking. Then, we could compare this
+possible states with the current state of the system to detect attacks.
+
+So it is a prove of contest of the possibility to use model checking to implement the security rules of an
+application.
+
+
 
 
 \newpage

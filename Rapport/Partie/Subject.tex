@@ -23,15 +23,15 @@ system. So we know that if we are not in a valid state of the system, the system
 
 \section{Position of my project}
 
-So for my project, I guess I have all possible state for my system and I will check these possible states with the
-actual state of the system. To do so, I have to find the state of applications and state of the network, and
+So for my project, I guess I have all possible states for my system and I will check these possible states with the
+current status of the system. To do so, I have to find the state of applications and the state of the network, and
 analyze them.
 
 I choose to use an IDS to have the status of the network. In fact, an IDS can raise alert when there is particular
 message, so I will raise event when I sniff particular message. To have a status of an application, I choose to
 implement probe in applications, or if it is possible use the log of these applications. Then, the SIEM will
-correlate all these messages and alerts to find the status of our system and it will compare with all previous
-possibility.
+correlate all these messages and alerts to find the status of our system and it will compare it with all previous
+possible status.
 
 
 The figure \ref{fig:model_project} represent the position of our project.

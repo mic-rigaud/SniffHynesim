@@ -4,19 +4,19 @@
 
 \section{Application created for test}
 
-As it was explain before, I have to protect a specific application. To do my tests, and prove the concept of my
+As it was explain before, I have to protect specific applications. To do my tests, and prove the concept of my
 work, I choose to create a simple application. I plan to add some security issue to be more realistic.~\\
 
 
-This application have three states, and two part. Firstly, there is an admin interface which contain the state
+This application has three states, and two parts. Firstly, there is an admin interface which contains the state
 admin. This interface is connected on the port 9000. Only one specific known computer can access to this interface.
 Of course, the aim of attackers is to arrive in this state.
 
 Then there is the main application. It is connected to the port 9124, and everybody can connect to it. There is two
-state ping and pong. If the application is in the state ping and the user send <<topong>> the application go to state
-pong, and if the application is in the state pong and the user send <<toping>> the application go to the state ping.
-There is also an unknown backdoor, if the user is in the state ping for the third time and he send <<admin>>, the
-application go to the admin interface.
+states ping and pong. If the application is in the state ping and the user send <<topong>> the application go to
+state pong, and if the application is in the state pong and the user send <<toping>> the application go to the
+state ping. There is also an unknown backdoor, if the user is in the state ping for the third time and he send
+<<admin>>, the application go to the admin interface.
 
 The figure \ref{fig:appli} represent a model of our application.
 
@@ -31,7 +31,7 @@ The figure \ref{fig:appli} represent a model of our application.
 \section{IDS}
 
 To monitor the network between my applications, I have to install an IDS. In this project, my IDS only need to check
-network packets and send alert when it detects some pattern. So I choose to use a IDS which use a misuse detection.
+network packets and send alert when it detects some pattern. So I choose to use an IDS which use a misuse detection.
 
 Moreover, my IDS only need to raise alert and save them. It is possible to find on the market of open source
 software many IDS which do that. So I choose one of the most popular open source IDS, SELKS.
