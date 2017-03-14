@@ -200,17 +200,22 @@ the results of the project.
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 
+At the end of this study, I succeeded in implementing a detection system. My system of detection uses information
+extracted from the applications and the network studied. With this information my system is able to determine the
+status of the system protected. Then, it compare this with the possible states and can know if our system is under
+attack. For this project, I protected a simple application name <<ping-pong>>.
 
-After this study, I got to implement a system of detection. But because of the lack of time, I achieved a simple
-system, which is based on SELKS and on a SIEM implemented by me. This system is adapted to the application used for
-the tests but it needs some improvements to be adapted for other applications.
 
-We can also notice that my system of detection can also be attacked which has not been envisaged in this study.
+Our system of detection is a complex system based on an IDS named SELKS and a SIEM adapted for the system
+protected. It is possible to notice that our system detected during the tests all the attacks envisaged. But it is
+also possible to underline that it is possible to improve this system of detection. Firstly by improving the speed
+of the IDS. Secondly by improving the security of our system of detection. And thirdly by improving the modularity
+of our system.
 
-To conclude, I achieve a simple system of detection which need some improvements. However, this system prove that
-it is possible to retrieve all the states of an observed system. And if we could model this observed system, we
-would be able to extract all the possible states of the system via model checking. Then, we could compare this
-possible states with the current state of the system to detect attacks.
+To conclude, I achieve a complex system of detection which need some improvements. However, this system prove that
+it is possible to retrieve all the states of an observed system. And if we could model this observed system to
+determine all possible states via model checking, we could compare this possible states with the current state of
+the system and thus detect attacks.
 
 So it is a prove of contest of the possibility to use model checking to implement the security rules of an
 application.

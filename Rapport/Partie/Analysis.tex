@@ -5,16 +5,17 @@
 
 \section{Results}
 
-In the system represented before, I represented the cyber defense. On the same system, Justin Bouroux achieved
+In the system represented before, I represent the cyber defense. On the same system, Justin Bouroux achieved
 attacks and tried to penetrate the system. Of course, it was designed to have some security issues, but the most
 important for my system is the detection of its attacks. In fact, all system have security issue even the most
 secure\footnote{A minimum of <<zero day>>}, but if we can detect an intrusion we are able to ensure the service. If
 you want more information about attacks carried out, you can read the Justin's report.
 ~\\
 
-Firstly we can notice that my system was able to detect the scan of ports. In fact, when Justin try to scan all the
-ports of the Debian, Suricata raised some warnings. This warnings represent a possible attacks. It is very important
-to detect that because it is often the synonym that someone want to attack your system.
+To begin, when an hacker want to attack a system he always tries to scan the ports. We can notice that my system
+was able to detect the scan of ports. You can see on the next figure that Suricata raised some warnings during the
+scan. This warnings represent a possible attacks. It is very important to detect that because it is often the
+synonym that someone want to attack your system.
 
 \begin{figure}[h]
   \centering
@@ -25,8 +26,9 @@ to detect that because it is often the synonym that someone want to attack your 
 
 
 
-Then, he has tested the application. It is possible to see the events ping and pong on the network, and the events
-send by the application. The SIEM implemented resume these changes of states.
+Then, he has tested the application <<ping-pong>>. On the next figure, it is possible to see the messages
+<<go\_ping>> and <<go\_pong>> catch by the IDS. The events are raised because I had the rules described on the
+section \ref{sec:rules}.
 
 \begin{figure}[h]
   \centering
@@ -39,7 +41,8 @@ send by the application. The SIEM implemented resume these changes of states.
 Justin, also try to access to the admin interface with the combination of <<to\_ping>>, <<to\_pong>>, and
 <<admin>>. It is possible to notice, that my system of detection is able to detect this attack. On the network the
 attack seems invisible because he isn't logged in the port 9000, but the application send the event <<appli-python:
-go to admin state>>. So, the system is under attack.
+go to admin state>>. So, my SIEM understand that the user has access to the admin interface without using the good
+interface, so there is a problem: our system is under attack.
 
 \begin{figure}[h]
   \centering
@@ -73,10 +76,12 @@ Suricata IDS sometimes raises event later. Sometimes 5 minutes after the real ev
 normal IDS, but for our utilization it is. We want to know the states of our system without delay to analyze them.
 Even if I think the problem can be solved with computer more efficient, it is a real issue.
 
-Moreover, I didn't protect my detector system because the lack of time, so it is possible to attack it. For
+Moreover, I didn't protect my detector system because of the lack of time, so it is possible to attack it. For
 example, it is possible to send false messages to the SIEM to hide attacks. It would be necessary to add an
 authenticity on the messages send by the application to the SIEM.
 
+Finally, we can notice that my system is very huge and very complex. So the transition to scale could be very hard.
+So the system need some improvements in this direction as well.
 
 
 
